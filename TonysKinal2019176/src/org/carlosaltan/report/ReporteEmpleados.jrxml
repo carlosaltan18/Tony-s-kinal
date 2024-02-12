@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteEmpleados" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4117d966-0a55-4d46-9481-b20f7e12bc85">
+	<property name="ireport.zoom" value="1.2100000000000002"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="12"/>
+	<parameter name="imagen" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[call sp_ReporteEmpleados();]]>
+	</queryString>
+	<field name="descripcion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombresEmpleado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apellidosEmpleado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefonoContacto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band height="555" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="1" y="0" width="801" height="555" forecolor="#F0C494" backcolor="#F0C494" uuid="8c4d826c-32b8-4b21-9aee-4bab2d59d733"/>
+			</frame>
+		</band>
+	</background>
+	<title>
+		<band height="130" splitType="Stretch">
+			<staticText>
+				<reportElement x="13" y="10" width="329" height="41" uuid="25f55aba-a271-4e1f-8015-029995e7a9c1"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="24"/>
+				</textElement>
+				<text><![CDATA[Reporte Empleados]]></text>
+			</staticText>
+			<image>
+				<reportElement x="582" y="10" width="135" height="104" uuid="c8db4c5f-ffce-44a5-b565-25df934442b7"/>
+				<imageExpression><![CDATA[$P{imagen}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="1" y="11" width="802" height="47" forecolor="#FFFFFF" backcolor="#693926" uuid="86290fd5-945e-408f-9c52-20a180e71008"/>
+				<staticText>
+					<reportElement x="3" y="13" width="100" height="20" forecolor="#FFFFFF" uuid="59a24cc0-0042-48ad-9075-694d275369a5"/>
+					<textElement>
+						<font fontName="Franklin Gothic Demi" size="14"/>
+					</textElement>
+					<text><![CDATA[Descripción]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="232" y="13" width="100" height="20" forecolor="#FFFFFF" uuid="8a90199b-44de-45e6-ad8f-4311012251c7"/>
+					<textElement>
+						<font fontName="Franklin Gothic Demi" size="14"/>
+					</textElement>
+					<text><![CDATA[Empleado]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="519" y="13" width="100" height="20" forecolor="#FFFFFF" uuid="de18debf-309c-4955-ad7a-4af023f6532a"/>
+					<textElement>
+						<font fontName="Franklin Gothic Demi" size="14"/>
+					</textElement>
+					<text><![CDATA[Teléfono]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="34" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="1" y="0" width="802" height="33" forecolor="#FFFFFF" backcolor="#FAE7D1" uuid="d8777c3a-22ae-4d49-b0b4-10d78d631600"/>
+			</frame>
+			<textField>
+				<reportElement x="15" y="8" width="100" height="20" uuid="4ed90dd1-c92b-4eef-a625-19f538449c71"/>
+				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="145" y="10" width="125" height="20" uuid="ad66f0a1-6607-4b86-b3b1-d15124e4113b"/>
+				<textFieldExpression><![CDATA[$F{nombresEmpleado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="294" y="10" width="123" height="20" uuid="0d36d72a-0394-487f-9753-99e7d8369d2f"/>
+				<textFieldExpression><![CDATA[$F{apellidosEmpleado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="521" y="4" width="100" height="20" uuid="27744bd8-fb23-4250-a88c-996d730f6006"/>
+				<textFieldExpression><![CDATA[$F{telefonoContacto}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

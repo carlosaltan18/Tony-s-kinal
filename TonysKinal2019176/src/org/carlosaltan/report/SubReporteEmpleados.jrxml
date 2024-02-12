@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SubReporteEmpleados" language="groovy" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="dcbdfd2b-40e3-4adc-b200-2e772a1756cd">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="codEmpresa" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[call sp_ListarEmpleadosEmpresa($P{codEmpresa});]]>
+	</queryString>
+	<field name="nombresEmpleado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apellidosEmpleado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<columnHeader>
+		<band height="34">
+			<frame>
+				<reportElement mode="Opaque" x="1" y="9" width="753" height="24" forecolor="#FFFFFF" backcolor="#693926" uuid="1d4964a3-de93-440b-b101-87ee58af56bf"/>
+			</frame>
+			<staticText>
+				<reportElement x="10" y="12" width="144" height="20" forecolor="#FFFFFF" uuid="ce2bd958-d438-46b9-abcf-c9a942a2fd50"/>
+				<textElement>
+					<font fontName="Franklin Gothic Heavy" size="14"/>
+				</textElement>
+				<text><![CDATA[Nombres Empleado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="223" y="12" width="153" height="20" forecolor="#FFFFFF" uuid="715d3ae0-b641-49e2-af7a-00d91ed42db7"/>
+				<textElement>
+					<font fontName="Franklin Gothic Heavy" size="14"/>
+				</textElement>
+				<text><![CDATA[Apellidos Empleado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="441" y="13" width="196" height="20" forecolor="#FFFFFF" uuid="58190e40-d217-4c24-b2fe-ce842efe93c5"/>
+				<textElement>
+					<font fontName="Franklin Gothic Heavy" size="14"/>
+				</textElement>
+				<text><![CDATA[Descripcion]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="6" width="752" height="1" forecolor="#693926" uuid="5af585f9-7a68-4fd1-bdbb-15147894ab54"/>
+				<graphicElement>
+					<pen lineWidth="1.5" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="1" y="-1" width="751" height="23" forecolor="#FFFFFF" backcolor="#FAE7D1" uuid="3f9222bd-87be-4a96-bb91-dd14ba00e4f0"/>
+				<line>
+					<reportElement x="0" y="22" width="751" height="1" uuid="bada4a1a-a089-43b1-8c34-b7fafa6ce924"/>
+					<graphicElement>
+						<pen lineWidth="1.5" lineStyle="Dashed"/>
+					</graphicElement>
+				</line>
+			</frame>
+			<textField>
+				<reportElement x="10" y="0" width="175" height="20" uuid="7af0592d-e99d-4854-93ea-84bfcbc15d8e"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombresEmpleado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="223" y="0" width="181" height="20" uuid="0784adc2-3fff-4284-8641-e3ba5ab8a93b"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{apellidosEmpleado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="441" y="0" width="121" height="20" uuid="15c24c91-c3c2-47b5-9ff3-03eb56b06f28"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

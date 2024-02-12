@@ -1,0 +1,40 @@
+.backround{
+    -fx-background-color: #ebcc94; 
+        
+}
+.backround2{
+    -fx-background-color: #eb8c29; 
+}
+.label{
+    -fx-font-size: 13pt; 
+    -fx-font-family: Arial; 
+    -fx-alignment: center-left;
+    -fx-text-fill: black; 
+    -fx-font-weight: bold; 
+    -fx-opacity: 0.5;        
+}
+.label2{
+    -fx-font-size: 13pt; 
+    -fx-font-family: Arial; 
+    -fx-alignment: center-left;
+    -fx-text-fill: #693926;
+    -fx-font-weight: bold; 
+    -fx-opacity: 0.7;
+}
+.label3{
+    -fx-font-size: 17pt; 
+    -fx-font-family: Arial; 
+    -fx-alignment: center-left;
+    -fx-text-fill: #693926;
+    -fx-font-weight: bold ; 
+    -fx-opacity: 0.7;
+}
+
+.label4{
+    -fx-font-size: 13pt; 
+    -fx-font-family: Arial Black; 
+    -fx-alignment: center-left;
+    -fx-text-fill: #e33424;
+    -fx-font-weight: bold;  
+    -fx-opacity: 0.9;
+}

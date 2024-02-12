@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="522.0" prefWidth="520.0" stylesheets="@../resource/TonysKinal.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.carlosaltan.controller.MenuPrincipalController">
+   <children>
+      <ImageView fitHeight="522.0" fitWidth="572.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/Menu.png" />
+         </image>
+      </ImageView>
+      <MenuBar prefHeight="44.0" prefWidth="522.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Módulos">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#ventanaEmpresa" text="Empresas" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaProductos" text="Productos" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaTipoEmpleado" text="TipoEmpleado" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaTipoPlato" text="TipoPlato" />
+                  <MenuItem mnemonicParsing="false" onAction="#imprimirReporte" text="Menú" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Tablas de Unión">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#ventanaServiciosHasEmpleados" text="Servicios Empleados " />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaServiciosPlatos" text="Servicios Platos" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaProductosPlatos" text="Productos Platos " />
+              </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="?">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#ventanaProgramador" text="Programador" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaControlUsuario" text="Actualizar Contraseña" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Button fx:id="btnLogin" layoutX="7.0" layoutY="484.0" mnemonicParsing="false" onAction="#login" prefHeight="30.0" prefWidth="78.0" styleClass="button2" text="log out" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteProductos" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="06bc2506-7f52-4d29-8ac7-b2b39f4d2213">
+	<property name="ireport.zoom" value="1.7715610000000015"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="imagen" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[Select * from Productos;]]>
+	</queryString>
+	<field name="codigoProducto" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombreProducto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cantidadProducto" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band height="802" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="802" forecolor="#F0C494" backcolor="#F0C494" uuid="182effb4-6255-4893-bc2d-38a106b0c894"/>
+			</frame>
+		</band>
+	</background>
+	<title>
+		<band height="127" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="167" height="117" uuid="a5042a5b-8873-4be9-9405-c17c62b485b2"/>
+				<imageExpression><![CDATA[$P{imagen}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="193" y="19" width="329" height="41" uuid="19242c55-138d-40ea-a3d0-553a35817b82"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="30"/>
+				</textElement>
+				<text><![CDATA[Reporte Productos]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="57" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="42" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="42" forecolor="#FFFFFF" backcolor="#693926" uuid="d4bf19f5-8b25-4050-969c-c02f168434a0"/>
+				<staticText>
+					<reportElement x="16" y="9" width="100" height="20" forecolor="#FFFFFF" uuid="bae95a04-d5ef-468e-ae0a-ea75b4f5dd9d"/>
+					<textElement>
+						<font fontName="Franklin Gothic Demi"/>
+					</textElement>
+					<text><![CDATA[Código Producto]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="167" y="9" width="100" height="20" forecolor="#FFFFFF" uuid="209a67f1-8c73-4433-bbc3-519b6c39ad54"/>
+					<textElement>
+						<font fontName="Franklin Gothic Demi"/>
+					</textElement>
+					<text><![CDATA[Nombre Producto]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="351" y="9" width="100" height="20" forecolor="#FFFFFF" uuid="ac7559f1-d3cb-4550-b71d-75f449e8b1a7"/>
+					<textElement>
+						<font fontName="Franklin Gothic Demi"/>
+					</textElement>
+					<text><![CDATA[Cantidad]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="46" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="10" width="555" height="36" forecolor="#FFFFFF" backcolor="#FAE7D1" uuid="5727c2c6-b280-4fbd-bf76-f0637a4181a3"/>
+				<textField>
+					<reportElement x="14" y="13" width="100" height="20" uuid="ea32d428-d158-418d-82fd-52519685e9af"/>
+					<textFieldExpression><![CDATA[$F{codigoProducto}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="167" y="13" width="100" height="20" uuid="e34464d1-5120-4d48-840c-b305f5d3e25f"/>
+					<textFieldExpression><![CDATA[$F{nombreProducto}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="334" y="13" width="100" height="20" uuid="2e90cc4c-fb6e-40c1-b679-9c38dbd15668"/>
+					<textFieldExpression><![CDATA[$F{cantidadProducto}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

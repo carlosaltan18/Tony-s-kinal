@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteServicio" language="groovy" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b3d4f3b8-0097-4396-b6a6-f3ebdb39e4af">
+	<property name="ireport.zoom" value="1.3310000000000015"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#FAEBD7">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#FFE4BF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="53db46dd-e43e-4d39-9451-9f51913468f5"/>
+	<parameter name="codEmpresa" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\carlo\\OneDrive\\Documentos\\NetBeansProjects\\TonysKinal2019176\\src\\org\\carlosaltan\\report\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="imagen" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[call sp_ReporteServicio($P{codEmpresa});]]>
+	</queryString>
+	<field name="nombreEmpresa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cantidadPresupuesto" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipoServicio" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombresEmpleado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apellidosEmpleado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombrePlato" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cantidad" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcionPlato" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombreProducto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cantidadProducto" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band height="572" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="752" height="572" backcolor="#F0C494" uuid="c9f2fee8-46b7-42ef-b971-bb7b5a785f51"/>
+			</frame>
+		</band>
+	</background>
+	<title>
+		<band height="75" splitType="Stretch">
+			<staticText>
+				<reportElement x="27" y="14" width="228" height="35" uuid="10dc216e-68c9-4131-878f-2a0a4be942bc"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="24"/>
+				</textElement>
+				<text><![CDATA[Reporte Servicios]]></text>
+			</staticText>
+			<image>
+				<reportElement x="533" y="0" width="129" height="75" uuid="dd830f48-ad32-4f20-88d8-8dd375bcb7ae"/>
+				<imageExpression><![CDATA[$P{imagen}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="126" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="132" height="25" uuid="a424f76b-cd7d-4a09-bea5-57f64f130721"/>
+				<textElement>
+					<font fontName="Franklin Gothic Heavy" size="16"/>
+				</textElement>
+				<text><![CDATA[Reporte Empresa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="38" width="172" height="26" uuid="3a4d1916-f223-48f0-8e08-bbe35216e25c"/>
+				<textElement>
+					<font fontName="Franklin Gothic Heavy" size="16"/>
+				</textElement>
+				<text><![CDATA[Cantidad Presupuesto]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="148" y="2" width="135" height="20" uuid="de073772-ffa3-48b9-8986-1dcbf712a736"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreEmpresa}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0.00">
+				<reportElement x="185" y="40" width="164" height="20" uuid="eddd2efa-e604-462f-bf3a-22d83bb37483"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cantidadPresupuesto}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="386" y="0" width="100" height="20" forecolor="#000000" uuid="edc441d3-8c7c-4442-95ee-a81911ee6398"/>
+				<textElement>
+					<font fontName="Franklin Gothic Heavy" size="16"/>
+				</textElement>
+				<text><![CDATA[Tipo Servicio]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="514" y="0" width="100" height="20" uuid="5517a7b8-b535-4318-9cc5-9c757cb9add2"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tipoServicio}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="386" y="27" width="120" height="20" forecolor="#000000" uuid="94009829-b207-4e7d-b90e-3c8389feaccc"/>
+				<textElement>
+					<font fontName="Franklin Gothic Heavy" size="16"/>
+				</textElement>
+				<text><![CDATA[Nombre Plato]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="514" y="27" width="118" height="20" uuid="8cc62c43-7664-4fd9-8263-9443ce0c6ffd"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombrePlato}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="386" y="51" width="100" height="20" forecolor="#000000" uuid="e11e0f38-4e7c-4eb8-8bf2-1e119477db18"/>
+				<textElement>
+					<font fontName="Franklin Gothic Heavy" size="16"/>
+				</textElement>
+				<text><![CDATA[Cantidad]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="514" y="51" width="100" height="20" uuid="047a25d0-173a-4d0a-8ccb-6da0b0ba1685"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cantidad}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="-20" y="67" width="763" height="59" uuid="ca3874a2-a208-47bd-97e3-ca956b0474c1"/>
+				<subreportParameter name="codEmpresa">
+					<subreportParameterExpression><![CDATA[$P{codEmpresa}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportExpression>
+			</subreport>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="753" height="21" forecolor="#FFFFFF" backcolor="#693926" uuid="730b5aa3-d351-4a4d-a15c-87f331b316c7"/>
+				<staticText>
+					<reportElement x="27" y="1" width="126" height="20" forecolor="#FFFFFF" uuid="09b95311-c53b-47cb-8d70-450785e238d1"/>
+					<textElement>
+						<font fontName="Franklin Gothic Heavy" size="14"/>
+					</textElement>
+					<text><![CDATA[NombreProducto]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="195" y="1" width="139" height="20" forecolor="#FFFFFF" uuid="7fd61e8a-9d56-4570-9ab3-a4d7276573d9"/>
+					<textElement>
+						<font fontName="Franklin Gothic Heavy" size="14"/>
+					</textElement>
+					<text><![CDATA[cantidadProducto]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="28" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="-1" width="753" height="25" forecolor="#FFFFFF" backcolor="#FAE7D1" uuid="7f293828-4455-4152-bcd2-d73b55d9c740"/>
+				<textField>
+					<reportElement x="27" y="2" width="143" height="20" uuid="e9e618e3-ae49-4816-8622-cbb4b794ff11"/>
+					<textElement>
+						<font fontName="Franklin Gothic Demi" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{nombreProducto}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<line>
+				<reportElement x="0" y="25" width="752" height="1" uuid="0a66a921-0772-4993-8afa-13a7fa98c9f9"/>
+				<graphicElement>
+					<pen lineWidth="1.5" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="194" y="0" width="149" height="20" uuid="96fd89ad-8024-47c8-9c47-f2d411fed392"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cantidadProducto}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="612" y="30" width="140" height="24" uuid="3d2b2011-582d-40b7-997b-d17b938fd107"/>
+				<textElement>
+					<font fontName="Franklin Gothic Heavy" size="18"/>
+				</textElement>
+				<text><![CDATA[Te conoce Bien]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

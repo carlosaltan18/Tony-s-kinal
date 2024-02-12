@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="992.0" style="-fx-background-color: #eccc94;" stylesheets="@../resource/TonysKinal.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.carlosaltan.controller.ReporteProductosController">
+   <children>
+      <Pane layoutX="-206.0" layoutY="-57.0" prefHeight="415.0" prefWidth="748.0" rotate="121.2" style="-fx-background-radius: 0 0 50; -fx-background-color: #fae7d1; -fx-opacity: 0.5;" />
+      <AnchorPane prefHeight="520.0" prefWidth="202.0" style="-fx-background-color: #b2703b;">
+         <children>
+            <Pane layoutX="2.0" layoutY="23.0" prefHeight="170.0" prefWidth="166.0" rotate="-90.0" style="-fx-background-color: #eb8c29; -fx-background-radius: 0 0 50 50;">
+               <children>
+                  <Label layoutX="80.0" layoutY="70.0" prefHeight="26.0" prefWidth="121.0" rotate="90.0" text="Reporte" textFill="#fff9f9">
+                     <font>
+                        <Font name="Franklin Gothic Heavy" size="23.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="34.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+                     <image>
+                        <Image url="@../image/ReporteProductos.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="59.0" layoutY="71.0" prefHeight="26.0" prefWidth="121.0" rotate="90.0" text="Productos" textFill="#fff9f9">
+                     <font>
+                        <Font name="Franklin Gothic Heavy" size="23.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <VBox layoutX="18.0" layoutY="208.0" prefHeight="282.0" prefWidth="165.0">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="69.0" prefWidth="142.0" styleClass="button1" text="Agregar" textAlignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="42.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/Agregar.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Franklin Gothic Heavy" size="18.0" />
+                     </font></Button>
+                  <Button mnemonicParsing="false" prefHeight="69.0" prefWidth="142.0" styleClass="button1" text="Eliminar" textAlignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="42.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/Eliminar.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Franklin Gothic Heavy" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="69.0" prefWidth="142.0" styleClass="button1" text="Editar" textAlignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="42.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/Editar.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Franklin Gothic Heavy" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="69.0" prefWidth="142.0" styleClass="button1" text="Reporte" textAlignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="42.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/Reporte.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Franklin Gothic Heavy" size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+            <ImageView fitHeight="36.0" fitWidth="39.0" layoutX="84.0" layoutY="483.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/regresoMenuPrincipal.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Pane layoutX="334.0" layoutY="424.0" prefHeight="91.0" prefWidth="87.0" style="-fx-background-color: #fae7d1; -fx-background-radius: 500; -fx-opacity: 0.43;" />
+      <Pane layoutX="444.0" layoutY="277.0" prefHeight="91.0" prefWidth="87.0" style="-fx-background-color: #fae7d1; -fx-background-radius: 500; -fx-opacity: 0.43;" />
+      <Pane layoutX="545.0" layoutY="97.0" prefHeight="91.0" prefWidth="87.0" style="-fx-background-color: #fae7d1; -fx-background-radius: 500; -fx-opacity: 0.43;" />
+      <Pane layoutX="687.0" layoutY="254.0" prefHeight="91.0" prefWidth="87.0" style="-fx-background-color: #fae7d1; -fx-background-radius: 500; -fx-opacity: 0.43;" />
+      <Pane layoutX="881.0" layoutY="323.0" prefHeight="91.0" prefWidth="87.0" style="-fx-background-color: #fae7d1; -fx-background-radius: 500; -fx-opacity: 0.43;" />
+      <Pane layoutX="750.0" layoutY="-86.0" prefHeight="220.0" prefWidth="528.0" rotate="-31.0" style="-fx-background-radius: 500; -fx-background-color: #fae7d1; -fx-opacity: 0.43;" />
+      <Pane layoutX="463.0" layoutY="453.0" prefHeight="196.0" prefWidth="443.0" rotate="30.5" style="-fx-background-radius: 500; -fx-background-color: #fae7d1; -fx-opacity: 0.43;" />
+   </children>
+</AnchorPane>

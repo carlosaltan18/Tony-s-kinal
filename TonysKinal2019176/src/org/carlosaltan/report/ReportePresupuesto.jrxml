@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReportePresupuesto" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8137020d-7c0a-4964-b0fe-faa1f4d8b790">
+	<property name="ireport.zoom" value="1.3310000000000008"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="1238"/>
+	<parameter name="codEmpresa" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="imagen" class="java.io.InputStream"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\carlo\\OneDrive\\Documentos\\NetBeansProjects\\TonysKinal2019176\\src\\org\\carlosaltan\\report\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="image" class="java.io.InputStream"/>
+	<queryString>
+		<![CDATA[Select * from Empresas E inner join Servicios S on
+	E.codigoEmpresa = S.codigoEmpresa
+		where E.codigoEmpresa = $P{codEmpresa}]]>
+	</queryString>
+	<field name="codigoEmpresa" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombreEmpresa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="direccion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefono" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigoServicio" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechaServicio" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipoServicio" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="horaServicio" class="java.sql.Time">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="lugarServicio" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefonoContacto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band height="802" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="802" backcolor="#F0C494" uuid="5f2a4849-9e0a-4958-bc9b-2e1044b92265"/>
+				<image>
+					<reportElement x="89" y="455" width="466" height="307" uuid="e02b4dca-dd7c-47d4-87db-efb8dedc4893"/>
+					<imageExpression><![CDATA[$P{image}]]></imageExpression>
+				</image>
+			</frame>
+		</band>
+	</background>
+	<title>
+		<band height="108" splitType="Stretch">
+			<image>
+				<reportElement x="427" y="0" width="183" height="108" uuid="8553ca7d-5a4e-4577-bf50-a75c5735b58a"/>
+				<imageExpression><![CDATA[$P{imagen}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="10" y="10" width="172" height="20" uuid="8e01d248-94bd-4595-bde9-00a309903e22"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="16"/>
+				</textElement>
+				<text><![CDATA[Reporte Presupuesto]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="131" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="0" width="172" height="20" uuid="a7ec908c-cf3a-4413-8900-e990cce9d5fa"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="16"/>
+				</textElement>
+				<text><![CDATA[Nombre de la Empresa]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="216" y="0" width="111" height="20" uuid="6f6468b4-ed5a-4175-82f9-c3a750583b70"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreEmpresa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="217" y="33" width="100" height="20" uuid="94ff0674-e8bb-451e-a098-75a0a106f3da"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{direccion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="416" y="0" width="100" height="20" uuid="b2bef62a-0915-448a-b496-285cb6d5326f"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{telefono}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="-17" y="73" width="555" height="39" uuid="2ec4f3ef-c73b-41d8-aec4-d545bc22c3d0"/>
+				<subreportParameter name="codEmpresa">
+					<subreportParameterExpression><![CDATA[$P{codEmpresa}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportExpression>
+			</subreport>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="49" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="49" forecolor="#FFFFFF" backcolor="#693926" uuid="46437042-989b-42b6-a227-4a95ffbab650"/>
+			</frame>
+			<staticText>
+				<reportElement x="10" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="b047cc76-f995-4b71-ac68-4c5baf80751a"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="16"/>
+				</textElement>
+				<text><![CDATA[fechaServicio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="116" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="74ce5dd2-84a0-455f-a8a0-2fc313dd45c1"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="16"/>
+				</textElement>
+				<text><![CDATA[horaServicio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="227" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="cf96f07e-1615-4416-bbcf-70b19f74976a"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="16"/>
+				</textElement>
+				<text><![CDATA[lugarServicio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="338" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="16cd0f09-e3de-487d-a4ad-5e54d68b9891"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="16"/>
+				</textElement>
+				<text><![CDATA[telefonoContacto]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="52" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="52" forecolor="#FFFFFF" backcolor="#FAE7D1" uuid="1c3b894f-171d-47d4-9181-4c71a55bb128"/>
+			</frame>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="10" y="12" width="100" height="20" uuid="68a1173c-e88f-482f-917d-944265df403d"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fechaServicio}]]></textFieldExpression>
+			</textField>
+			<textField pattern="h.mm a">
+				<reportElement x="119" y="12" width="100" height="20" uuid="1dcc4d13-ed43-4b0a-bc12-f9a093354ff1"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{horaServicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="231" y="12" width="100" height="20" uuid="7618e463-393b-42eb-a60b-9545573593e7"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lugarServicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="342" y="12" width="123" height="20" uuid="1009e7ca-f9e5-4459-83b9-6a1b0c88ffa2"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{telefonoContacto}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="46" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

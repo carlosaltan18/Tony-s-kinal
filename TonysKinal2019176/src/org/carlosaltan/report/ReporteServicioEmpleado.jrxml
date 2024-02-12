@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteServicioEmpleado" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e2251a08-0b2f-489d-a1bb-eabfd66fc3ae">
+	<property name="ireport.zoom" value="1.464100000000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="imagen" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[call sp_ReporteServiciosEmpleado();]]>
+	</queryString>
+	<field name="codigoServicio" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombresEmpleado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apellidosEmpleado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechaEvento" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="horaEvento" class="java.sql.Time">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="lugarEvento" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band height="555" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="802" height="555" backcolor="#F0C494" uuid="0f601426-cb65-495d-b9a2-07f88cb6f215"/>
+				<image>
+					<reportElement x="136" y="186" width="426" height="354" uuid="eafed145-bc32-46b6-b914-33dc337cdffa"/>
+					<imageExpression><![CDATA[$P{imagen}]]></imageExpression>
+				</image>
+			</frame>
+		</band>
+	</background>
+	<title>
+		<band height="136" splitType="Stretch">
+			<staticText>
+				<reportElement x="3" y="0" width="329" height="41" uuid="94da0f0d-85be-4df1-86bf-6241b58b4397"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="24"/>
+				</textElement>
+				<text><![CDATA[Reporte Servicios Empleados]]></text>
+			</staticText>
+			<image>
+				<reportElement x="515" y="0" width="219" height="136" uuid="c091b18d-19eb-41de-ac85-d1365b00c673"/>
+				<imageExpression><![CDATA[$P{imagen}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="61" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="14" width="802" height="47" forecolor="#FFFFFF" backcolor="#693926" uuid="f8dbcb93-968f-4e12-97ac-bdf044bdd0a8"/>
+				<staticText>
+					<reportElement x="3" y="13" width="100" height="20" forecolor="#FFFFFF" uuid="e6ae40fd-3740-4534-b2e4-bb7d58f6e279"/>
+					<textElement>
+						<font fontName="Franklin Gothic Demi" size="14"/>
+					</textElement>
+					<text><![CDATA[Código Servicio ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="232" y="13" width="100" height="20" forecolor="#FFFFFF" uuid="87889477-2b71-4eb7-a603-350ef8482867"/>
+					<textElement>
+						<font fontName="Franklin Gothic Demi" size="14"/>
+					</textElement>
+					<text><![CDATA[Empleado]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="462" y="13" width="100" height="20" forecolor="#FFFFFF" uuid="6cfc04a6-d804-434c-baae-96fa883f1f05"/>
+					<textElement>
+						<font fontName="Franklin Gothic Demi" size="14"/>
+					</textElement>
+					<text><![CDATA[Fecha Evento ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="604" y="13" width="100" height="20" forecolor="#FFFFFF" uuid="e4446703-86a7-45b8-8eb1-dd074f5014c7"/>
+					<textElement>
+						<font fontName="Franklin Gothic Demi" size="14"/>
+					</textElement>
+					<text><![CDATA[Hora Evento]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="36" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="802" height="33" forecolor="#FFFFFF" backcolor="#FAE7D1" uuid="f6e4e5ce-8b4c-46ad-8a76-26794eb44c84"/>
+				<textField>
+					<reportElement x="130" y="2" width="137" height="20" uuid="9b55ece4-7ce0-41d1-a9bb-7764b45f8f8d"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{nombresEmpleado}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="603" y="2" width="100" height="20" uuid="732450ce-1b65-4503-a1f7-f733032d0121"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{horaEvento}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField>
+				<reportElement x="0" y="2" width="103" height="20" uuid="0a6d2d3d-1d1d-4a37-b8ed-a9198fc9d1ff"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codigoServicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="277" y="2" width="160" height="20" uuid="090be53d-ce4f-410d-92fd-464f8b7eb955"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{apellidosEmpleado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="461" y="2" width="120" height="20" uuid="f671b22e-215e-4edb-ab36-c0d2cc77ca0d"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fechaEvento}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
